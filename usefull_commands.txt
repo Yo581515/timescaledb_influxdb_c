@@ -1,0 +1,10 @@
+winpty docker exec -it influxdb influx query --org example-org \
+  'from(bucket:"example-bucket")
+    |> range(start: -1h)
+    |> filter(fn: (r) => r._measurement == "temperature ")'
+
+
+docker compose down -v
+docker compose up -d
+export INFLUX_TOKEN="supersecret-token-123"
+./test_insert_and_query.sh
