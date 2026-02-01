@@ -1,0 +1,7 @@
+psycopg2-binary
+requests
+pandas
+matplotlib
+seaborn
+python-dotenv
+schedule

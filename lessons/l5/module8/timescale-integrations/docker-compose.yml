@@ -1,0 +1,16 @@
+services: 
+  timescaledb: 
+    image: timescale/timescaledb:latest-pg16 
+    container_name: timescale-integrations 
+    environment:
+      - POSTGRES_USER=yosafe
+      - POSTGRES_PASSWORD=yosafe123
+      - POSTGRES_DB=integrations_db
+    ports: 
+      - "5555:5432" 
+    volumes: 
+      - timescale_data:/var/lib/postgresql/data 
+      - ./init-scripts:/docker-entrypoint-initdb.d 
+ 
+volumes: 
+  timescale_data:
