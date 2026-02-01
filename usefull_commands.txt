@@ -8,3 +8,10 @@ docker compose down -v
 docker compose up -d
 export INFLUX_TOKEN="supersecret-token-123"
 ./test_insert_and_query.sh
+
+
+docker exec -it timescaledb psql -U admin -d metricsdb
+
+
+
+
