@@ -150,6 +150,6 @@ if __name__ == "__main__":
     response = input("Run continuous ingestion? (y/n): ").lower()
 
     if response == "y":
-        ingestion.run_continuous(interval_minutes=5)  # Every 5 minutes for demo
+        ingestion.run_continuous(interval_minutes=1)  # Every 1 minute for demo
     else:
         print("✅ Single ingestion complete!")
